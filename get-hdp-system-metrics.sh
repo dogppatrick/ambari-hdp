@@ -26,7 +26,7 @@ do
 	done
 
 	tar zcvf /home/hdfs/hdp/hdp$filename.tar.gz /home/hdfs/hdp &> /dev/null
-	sudo -u hdfs hadoop fs -moveFromLocal /home/hdfs/hdp/hdp$filename.tar.gz /user/hdfs/data
+	sudo -u hdfs hadoop fs -put /home/hdfs/hdp/hdp$filename.tar.gz /user/hdfs/data
 	if [ $? -eq 0 ];
 	then
 		echo "the file hdp$filename.tar.gz has been uploaded to /user/hdfs/data"
