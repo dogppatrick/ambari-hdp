@@ -17,9 +17,9 @@ public class WordCount {
 			System.err.println("Usage: wordcount <in> <out>");
 			System.exit(2);
 		}
-		
+                conf.set("mapreduce.framework.name", "yarn");
 		Job job = new Job(conf, "wordcount");
-		job.setJarByClass(WordCount.class);
+		job.setJar("/root/ambari-hdp/wc/wordcount.jar");
 		job.setMapperClass(TokenizerMapper.class);
 		job.setCombinerClass(IntSumReducer.class);
 		job.setReducerClass(IntSumReducer.class);
