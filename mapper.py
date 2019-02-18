@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import sys
 
@@ -16,5 +16,6 @@ for line in sys.stdin:
         # Reduce step, i.e. the input for reducer.py
         #
         # tab-delimited; the trivial word count is 1
-        print '%s\t%s' % (word, 1)
+        text='%s\t%s' % (word, 1)
+        print(text)
 
